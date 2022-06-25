@@ -19,7 +19,7 @@ void Point::Show() {
     cout << "x: " << x << "\ty: " << y << "\n";
 };
 
- int Point::Move(int _x, int _y) {
+int Point::Move(int _x, int _y) {
     x = _x;
     y = _y;
     cout << "Moved: (" << "x: " << x << "\ty: " << y << ")\n";
@@ -33,18 +33,22 @@ public:
     Circle(int _r = 0) {
         this->r = _r;
     }
+    virtual void ShowR() {
+        cout << "r: " << r << "\t";
+        Show();
+    }
 
 };
 
 
 int main() {
 
-    Point A(0,0);
+    Point A(0, 0);
     A.Show();
-    A.Move(2,3);
+    A.Move(2, 3);
     Circle B(3);
-    B.Move(3,4);
-    B.Show();
+    B.Move(3, 4);
+    B.ShowR();
 
     return 0;
 }
